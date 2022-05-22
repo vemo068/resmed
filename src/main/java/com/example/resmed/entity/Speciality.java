@@ -24,9 +24,41 @@ public class Speciality {
     private Long specialityId;
     private String imgUrl;
     private String specialityName;
-    @OneToMany
-    @JoinColumn(name = "speciality")
-    private Set<Doctor> doctors;
+
+//    @OneToMany(mappedBy = "speciality")
+//   // @JoinColumn(name = "speciality")
+//    private Set<Doctor> doctors;
 
 
+    public Long getSpecialityId() {
+        return specialityId;
+    }
+
+    public void setSpecialityId(Long specialityId) {
+        this.specialityId = specialityId;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public String getSpecialityName() {
+        return specialityName;
+    }
+
+    public void setSpecialityName(String specialityName) {
+        this.specialityName = specialityName;
+    }
+
+//    public Set<Doctor> getDoctors() {
+//        return doctors;
+//    }
+//
+//    public void setDoctors(Set<Doctor> doctors) {
+//        this.doctors = doctors;
+//    }
 }

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import java.util.Set;
 
@@ -21,7 +22,30 @@ public class HourLabel {
     private Long labelId;
     private String label;
 
+
+//    @OneToMany(mappedBy = "hourLabel")
+//    @JoinColumn(name = "hourLabel")
+//    private Set<Rdv> rdvs;
+
     public HourLabel(Long labelId) {
         this.labelId = labelId;
     }
+
+    public Long getLabelId() {
+        return labelId;
+    }
+
+    public void setLabelId(Long labelId) {
+        this.labelId = labelId;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+
 }

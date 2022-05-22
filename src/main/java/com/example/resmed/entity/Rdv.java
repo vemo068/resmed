@@ -18,6 +18,7 @@ public class Rdv {
     @GeneratedValue
     private Long appointId;
 
+    private String date;
     @OneToOne
     @JoinColumn(name = "userId")
     private User user;
@@ -30,8 +31,9 @@ public class Rdv {
     @JoinColumn(name = "label_id",nullable = false)
     private HourLabel hourLabel;
 
-    public Rdv(User user, Doctor doctor, HourLabel hourLabel) {
+    public Rdv(String date,User user, Doctor doctor, HourLabel hourLabel) {
         this.user = user;
+        this.date=date;
         this.doctor = doctor;
         this.hourLabel = hourLabel;
     }

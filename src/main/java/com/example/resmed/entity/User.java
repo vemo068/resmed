@@ -22,4 +22,5 @@ public class User {
     public User(long userId) {
         this.userId = userId;
     }
+
 }
