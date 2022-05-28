@@ -35,8 +35,8 @@ public class HourLabelController {
     @RequestMapping(value="listrdvs", method = RequestMethod.GET)
     public @ResponseBody
     List<HourWithRdvs> getListRdvs(@RequestParam("dr_id") Long doctorId, @RequestParam("date") String date) {
-        List<HourWithRdvs> hh= rdvService.listRdvs(doctorId,date);
-        return hh;
+        List<HourWithRdvs> listOfAppointements= rdvService.listRdvs(doctorId,date);
+        return listOfAppointements;
     }
 }
 

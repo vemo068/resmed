@@ -12,5 +12,6 @@ import java.util.List;
 @Repository
 public interface RdvRepository extends JpaRepository<Rdv,Long> {
     public List<Rdv> findByHourLabelAndDoctorAndDate(HourLabel hr, Doctor dr,String Date);
+    public List<Rdv> findByUser(User user);
 
 }

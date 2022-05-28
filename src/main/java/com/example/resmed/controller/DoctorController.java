@@ -38,16 +38,22 @@ public class DoctorController {
 
         return dr;
     }
+
+
+
     @RequestMapping(value="specialitydoctors", method = RequestMethod.GET)
     public @ResponseBody
     Set<Doctor> getSpecialityDoctors(@RequestParam("id") Long specialityId){
 
         Speciality i = specialityRepository.findBySpecialityId(specialityId);
         Set<Doctor> doctorList=  doctorRepository.findBySpeciality(i);
-       // List<Doctor> doctorList=doctorRepository.findBySpecialityId(specialityId);
+
         return doctorList;
     }
 
+
+
+    
     @RequestMapping(value="sp", method = RequestMethod.GET)
     public @ResponseBody
     Speciality getSpeciality(@RequestParam("id") Long spId){
