@@ -19,6 +19,8 @@ public class Rdv {
     private Long appointId;
 
     private String date;
+    @Column(columnDefinition = "boolean default false")
+    private boolean completed;
     @OneToOne
     @JoinColumn(name = "userId")
     private User user;

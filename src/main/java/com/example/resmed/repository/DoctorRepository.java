@@ -12,5 +12,7 @@ import java.util.Set;
 @Repository
 public interface DoctorRepository extends JpaRepository<Doctor,Long> {
     Doctor findByDoctorId(Long id);
-    Set<Doctor> findBySpeciality(Speciality speciality);
+    Set<Doctor> findByVerified(boolean b);
+    Set<Doctor> findBySpecialityAndVerified(Speciality speciality,boolean b);
+    Doctor findByEmailAndPassword(String email,String password);
 }

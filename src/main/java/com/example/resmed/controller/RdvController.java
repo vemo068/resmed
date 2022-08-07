@@ -40,11 +40,29 @@ public class RdvController {
         List<Rdv> getSpecialityDoctors(@RequestParam("id") Long userId){
 
         User user=userRepository.findByUserId(userId);
-        List<Rdv> userAppoitements=rdvRepository.findByUser(user);
+        List<Rdv> userAppoitements=rdvRepository.findByUserAndCompleted(user,false);
 
         return userAppoitements;
     }
 
+    @RequestMapping(value="updaterdv", method = RequestMethod.GET)
+    public @ResponseBody
+    void updateRdv(@RequestParam("id") Long rdvId){
+
+       Rdv v=rdvRepository.findByAppointId(rdvId);
+       v.setCompleted(true);
+        rdvRepository.save(v);
+
+    }
+
+    @RequestMapping(value="deleterdv", method = {RequestMethod.GET, RequestMethod.DELETE})
+    public @ResponseBody
+    void deleteRdv(@RequestParam("id") Long rdvId){
+
+        rdvRepository.deleteById(rdvId);
+
+
+    }
 
     @PostMapping("/sendrdv")
     public ResponseEntity<Rdv> postBody(@RequestBody RendV rendV) throws URISyntaxException {

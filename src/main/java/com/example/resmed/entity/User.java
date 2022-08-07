@@ -1,8 +1,10 @@
 package com.example.resmed.entity;
 
 import lombok.*;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
@@ -12,6 +14,7 @@ import javax.persistence.Id;
 @Builder
 public class User {
     @Id
+    @GeneratedValue
     private long userId;
     private String name;
     private String password;
@@ -22,5 +25,11 @@ public class User {
     public User(long userId) {
         this.userId = userId;
     }
+
+    public User( String name) {
+
+        this.name = name;
+    }
+
 
 }

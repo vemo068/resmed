@@ -12,6 +12,10 @@ public class RendV {
     private String date;
     private Long user_id;
 
+    private Long doctor_id;
+    private Long label_id;
+
+
     public String getDate() {
         return date;
     }
@@ -19,10 +23,6 @@ public class RendV {
     public void setDate(String date) {
         this.date = date;
     }
-
-    private Long doctor_id;
-    private Long label_id;
-
     public Long getUser_id() {
         return user_id;
     }
